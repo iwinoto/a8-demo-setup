@@ -33,11 +33,13 @@ apt-get -y install docker-engine
 usermod -aG docker vagrant
 
 echo "### Install Docker-Compose"
-curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+#curl -silent -L https://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+wget -qO /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m`
 chmod a+x /usr/local/bin/docker-compose
 
-# Bash completion for compose
-curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+echo "### Bash completion for compose"
+#curl -silent -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+wget -qO /etc/bash_completion.d/docker-compose https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose
 
 echo "### Install cf-cli"
 # Get cf-cli installer
