@@ -6,21 +6,39 @@ The only prerequisite is to install Vagrant with a provider. These instructions 
 ## Setup Vagrant with VirtualBox
 Follow the instructions on the [Installing Vagrant page](https://www.vagrantup.com/docs/installation/).
 
-## Crete the Amalgam8 demonstration environment
+## Bootstrap the Amalgam8 demonstration environment
 To construct the environment, from a terminal, execute, clone the repository to your workstation. From a terminal, change to the cloned directory and execute
 ```
 $ vagrant up
 ```
 
-This will download and provision the virtual machine. This step may take some time. The output may also contain some red text. The provisioning scripts have been repeatedly tested, and this is expected.
+_**Note:** `vagrant up` may fail with an error about `ubuntu/xenial64` not being found and needing to login to hashicorp. This is due to a buggy `curl` utility embedded in Vagrant (on OSX 'opt/vagrant/embedded/bin/curl'). You can resolve this by removing (or renaming) the buggy utility._
+
+All going well, `vagrant up` will download and provision the virtual machine. This step may take some time. The output may also contain some red text. The provisioning scripts have been repeatedly tested, and this is expected.
 
 Once the virtual machine provisioning is complete, you can open a secure shell to the virtual machine with
 ```
 $ vagrant ssh
 ```
 
+## Shutdown
+When you have finished and want to shutdown the virtual machine, first `exit` the ssh session. Then halt the virtual machine from the command line
+```
+$ vagrant halt
+```
+
+You can then restart the virtual machine with `vagrant up`.
+
+You can also completely destroy the virtual machine with
+```
+$ vagrant destroy
+```
+
+After you have destroyed the virtual machine you can rebuild it with `vagrant up`.
+
 ## The environment
-The contains the following components
+The virtual machine contains the following components
+ * Ubuntu Xenial 16.04, 64 bit
  * Docker (`docker`)
  * Docker-Compose (`docker-compose`)
  * Cloud Foundry command line `cf`
