@@ -29,8 +29,8 @@ apt-get update
 
 apt-get -y install docker-engine
 
-#add user vagrant to docker group
-usermod -aG docker vagrant
+#add user ubuntu to docker group
+usermod -aG docker ubuntu
 
 echo "### Install Docker-Compose"
 #curl -silent -L https://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
@@ -58,10 +58,10 @@ tar -xf bx-cli-installer_amd64.tar.gz
 Bluemix_CLI/install_bluemix_cli
 
 echo "### Install Install IBM Bluemix Container Service plugin to Bluemix CLI"
-su vagrant -c "bx plugin install -r Bluemix IBM-Containers"
+su ubuntu -c "bx plugin install -r Bluemix IBM-Containers"
 
 echo "### Optionally install IBM Bluemix Container Service plugin to CF-CLI"
-su vagrant -c "cf install-plugin https://static-ice.ng.bluemix.net/ibm-containers-linux_x64 -f"
+su ubuntu -c "cf install-plugin https://static-ice.ng.bluemix.net/ibm-containers-linux_x64 -f"
 
 sh /vagrant/Provision_A8.sh
 

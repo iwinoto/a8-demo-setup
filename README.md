@@ -16,10 +16,13 @@ _**Note:** `vagrant up` may fail with an error about `ubuntu/xenial64` not being
 
 All going well, `vagrant up` will download and provision the virtual machine. This step may take some time. The output may also contain some red text. The provisioning scripts have been repeatedly tested, and this is expected.
 
+## Connect to the demonstration environment
 Once the virtual machine provisioning is complete, you can open a secure shell to the virtual machine with
 ```
 $ vagrant ssh
 ```
+
+_*Note:* On starting the ssh session you may see a message of `*** System restart required ***`. Exit the ssh session and halt the virtual machine with `vagrant halt` and start it again with `vagrant up`. This will restart the virtual machine without re-provisioning. Then restart the ssh session._
 
 ## Shutdown
 When you have finished and want to shutdown the virtual machine, first `exit` the ssh session. Then halt the virtual machine from the command line
