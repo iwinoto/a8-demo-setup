@@ -12,7 +12,7 @@ To construct the environment, from a terminal, execute, clone the repository to 
 $ vagrant up
 ```
 
-_**Note:** `vagrant up` may fail with an error about `ubuntu/xenial64` not being found and needing to login to hashicorp. This is due to a buggy `curl` utility embedded in Vagrant (on OSX 'opt/vagrant/embedded/bin/curl'). You can resolve this by removing (or renaming) the buggy utility._
+_**Note:** `vagrant up` may fail with an error about `ubuntu/xenial64` not being found and needing to login to hashicorp. This is due to a [buggy `curl` utility embedded in Vagrant (on OSX 'opt/vagrant/embedded/bin/curl')](http://superuser.com/questions/1088198/cant-vagrant-up-atlassian-box). You can resolve this by removing (or renaming) the buggy utility._
 
 All going well, `vagrant up` will download and provision the virtual machine. This step may take some time. The output may also contain some red text. The provisioning scripts have been repeatedly tested, and this is expected.
 
