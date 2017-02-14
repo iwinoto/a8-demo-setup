@@ -72,7 +72,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell",
     privileged: "true",
     env: {
-      "BMX_CLI" => "Bluemix_CLI_0.4.4_amd64.tar.gz",
       "BMX_CLI_VER" => "0.4.6",
       "CF_VER" => "6.22.2",
       "COMPOSE_VER" => "1.11.1" },

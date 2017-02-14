@@ -1,5 +1,5 @@
 # Setting up an IBM Bluemix Container Service and Amalgam8 demo environment
-This repository uses Vagrant to contruct a VM that can be used to demonstrate and explore Amalgam8 either locally or on IBM Bluemix Containers Service.
+This repository uses Vagrant to construct a VM that can be used to demonstrate and explore Amalgam8 either locally or on IBM Bluemix Containers Service.
 
 The only prerequisite is to install Vagrant with a provider. These instructions have been tested with VirtualBox as the provider.
 
@@ -42,9 +42,10 @@ After you have destroyed the virtual machine you can rebuild it with `vagrant up
 ## The environment
 The virtual machine contains the following components
  * Ubuntu Xenial 16.04, 64 bit
- * Docker (`docker`)
- * Docker-Compose (`docker-compose`)
- * Cloud Foundry command line `cf`
- * Bluemix command line `bx`
+ * Python v2.7.10 (latest from Xenial repository)
+ * docker latest
+ * docker-compose v1.11.1 (Can be set in Vagantfile)
+ * cf v6.22.2 (Can be set in Vagantfile)
+ * bx v0.4.6 (Can be set in Vagantfile)
  * IBM Bluemix Container Service plugins for Bluemix (`bx ic`) and Cloud Foundry (`cf ice`) command lines
  * Amalgam8 controller command line (`a8ctl`)

@@ -4,6 +4,8 @@ echo Setup BMX tools for CF and IBM Containers
 
 mkdir -p /tmp/Downloads
 cd /tmp/Downloads
+# In Vagrant, Elasticsearch 5.0 requires increasing the max map count
+sudo sysctl -w vm.max_map_count=262144
 
 echo "### Install Docker"
 # ref: https://docs.docker.com/engine/installation/linux/ubuntu/#/install-docker
