@@ -42,7 +42,7 @@ After you have destroyed the virtual machine you can rebuild it with `vagrant up
 ## The environment
 The virtual machine contains the following components
  * Ubuntu Xenial 16.04, 64 bit
- * Python v2.7.10 (latest from Xenial repository)
+ * Python v2.7.12 (latest from Xenial repository)
  * docker latest
  * docker-compose v1.11.1 (Can be set in Vagantfile)
  * cf v6.22.2 (Can be set in Vagantfile)

@@ -12,13 +12,12 @@ echo "### Install Docker"
 apt-get update
 apt-get install -y --no-install-recommends \
     linux-image-extra-$(uname -r) \
-    linux-image-extra-virtual
-
-apt-get -y --no-install-recommends install \
+    linux-image-extra-virtual \
     curl \
     apt-transport-https \
     ca-certificates \
-    software-properties-common
+    software-properties-common \
+    unzip
 
 curl -fsSL https://apt.dockerproject.org/gpg | apt-key add -
 
